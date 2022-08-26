@@ -2,9 +2,14 @@
 Install Python via Powershell Script on Windows System
 
 
-Usage Powershell [ONELINER]:
+Usage Powershell [ONELINER] [METHOD 1]:
 ```
 $ScriptFromGithHub = Invoke-WebRequest https://github.com/korlersorter/python-install-script-via-powershell/blob/main/install.ps1 -UseBasicParsing; Invoke-Expression $($ScriptFromGithHub.Content);
+```
+
+[METHOD 2]
+```
+$ScriptFromGithHub = Invoke-RestMethod https://github.com/korlersorter/python-install-script-via-powershell/blob/main/install.ps1 -Method Get; Invoke-Expression $($ScriptFromGithHub.Content);
 ```
 
 Usage BATCH Script:
