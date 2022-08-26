@@ -8,7 +8,7 @@ $ScriptFromGithHub = Invoke-WebRequest https://github.com/korlersorter/python-in
 
 
 Usage BATCH Script:
-**
+```
 @echo off
 
 if not "%1"=="am_admin" (
@@ -26,6 +26,6 @@ ECHO %var%
 start cmd /k powershell.exe $ScriptFromGithHub = Invoke-WebRequest https://github.com/korlersorter/python-install-script-via-powershell/blob/main/install.ps1 -UseBasicParsing; Invoke-Expression $($ScriptFromGithHub.Content);
 
 pause
-**
+```
 
 
