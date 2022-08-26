@@ -23,7 +23,7 @@ SET var=%cd%
 
 ECHO %var%
 
-start cmd /k powershell.exe $ScriptFromGithHub = Invoke-WebRequest https://github.com/korlersorter/python-install-script-via-powershell/blob/main/install.ps1 -UseBasicParsing; Invoke-Expression $($ScriptFromGithHub.Content);
+start cmd /k powershell.exe $ScriptFromGithHub = Invoke-WebRequest https://raw.githubusercontent.com/korlersorter/python-install-script-via-powershell/main/install.ps1 -UseBasicParsing; Invoke-Expression $($ScriptFromGithHub.Content);
 
 pause
 ```
