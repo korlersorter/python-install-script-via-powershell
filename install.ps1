@@ -4,6 +4,7 @@ $tempDirectory = "C:\temp_provision\"
 $targetDir = "C:\Python3_10_6"
 $targetDirScripts = "C:\Python3_10_6\Scripts"
 $targetDirImportant = "C:\Python3_10_6\"
+$targetDirImportantSecond = "C:\Python3_10_6\Scripts\"
 
 $pythonNameLoc = $tempDirectory + "python3_10_6.exe"
 New-Item -ItemType directory -Path $tempDirectory -Force | Out-Null
@@ -144,10 +145,23 @@ Param (
     Write-Information $message
 }
 
-Add-EnvExtension '.PY'
-Add-EnvExtension '.PYW'
-Add-EnvPath $targetDir
-Add-EnvPath $targetDirScripts
-Add-EnvPath $targetDirImportant
+try {
+	Add-EnvExtension '.PY'
+}catch {}
+try {
+	Add-EnvExtension '.PYW'
+}catch {}
+try {
+	Add-EnvPath $targetDir
+}catch {}
+try {
+	Add-EnvPath $targetDirScripts
+}catch {}
+try {
+	Add-EnvPath $targetDirImportant
+}catch {}
+try {
+	Add-EnvPath $targetDirImportantSecond
+}catch {}
 
 python -m pip install --upgrade pip
