@@ -2,7 +2,7 @@
 $pythonUrl = "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe"
 $tempDirectory = "C:\temp_provision\"
 $targetDir = "C:\Python3_10_6"
-$targetDirScripts = "C:\Python3_10_6\Scripts\"
+$targetDirScripts = "C:\Python3_10_6\Scripts"
 $targetDirImportant = "C:\Python3_10_6\"
 
 $pythonNameLoc = $tempDirectory + "python3_10_6.exe"
@@ -146,6 +146,7 @@ Param (
 
 Add-EnvExtension '.PY'
 Add-EnvExtension '.PYW'
+Add-EnvPath $targetDir
 Add-EnvPath $targetDirScripts
 Add-EnvPath $targetDirImportant
 
